@@ -1,23 +1,20 @@
-# Compiled class file
-*.class
+class Main {
+	public static void main(String[] args) {
+		System.out.println(sumDigits(256));
+	}
 
-# Log file
-*.log
-
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
-*.jar
-*.war
-*.nar
-*.ear
-*.zip
-*.tar.gz
-*.rar
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+	public static int sumDigits(int number) {
+		int sum = 0;
+		int num = number;
+		if (number >=10) {
+			while(num > 0) {
+				sum += num % 10;
+				num = num / 10;
+			}
+		}
+		else if (number < 10) {
+			return -1;
+		}
+		return sum;
+	}
+}
